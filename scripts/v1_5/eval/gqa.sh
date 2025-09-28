@@ -1,0 +1,51 @@
+#!/bin/bash
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+export HF_DATASETS_OFFLINE=1
+
+gpu_list="${CUDA_VISIBLE_DEVICES:-0}"
+IFS=',' read -ra GPULIST <<< "$gpu_list"
+
+CHUNKS=${#GPULIST[@]}
+
+CKPT="llava-v1.5-7b"
+METHOD="AdaPruner"
+TOKEN=${1}
+PARAM="n_${TOKEN}"
+
+for IDX in $(seq 0 $((CHUNKS-1))); do
+    CUDA_VISIBLE_DEVICES=${GPULIST[$IDX]} python -W ignore -m llava.eval.model_vqa_loader \
+        --model-path ./models/${CKPT} \
+        --question-file ./playground/data/eval/gqa/llava_gqa_testdev_balanced.jsonl \
+        --image-folder ./playground/data/eval/gqa/data/images \
+        --answers-file ./playground/data/eval/gqa/answers/${CKPT}/${METHOD}/${PARAM}/${CHUNKS}_${IDX}.jsonl \
+        --num-chunks ${CHUNKS} \
+        --chunk-idx ${IDX} \
+        --visual-token-num 576 \
+        --temperature 0 \
+        --conv-mode vicuna_v1 \
+        --x0 14.9 \
+        --k0 0.4 \
+        --gamma 0.2 \
+        --target-token-num ${TOKEN} &
+done
+
+wait
+
+GQADIR="./playground/data/eval/gqa/data"
+output_file=./playground/data/eval/gqa/answers/${CKPT}/${METHOD}/${PARAM}/merge.jsonl
+
+# Clear out the output file if it exists.
+> "$output_file"
+
+# Loop through the indices and concatenate each file.
+for IDX in $(seq 0 $((CHUNKS-1))); do
+    cat ./playground/data/eval/gqa/answers/${CKPT}/${METHOD}/${PARAM}/${CHUNKS}_${IDX}.jsonl >> "$output_file"
+done
+
+python scripts/convert_gqa_for_eval.py --src "$output_file" --dst ./playground/data/eval/gqa/data/eval/testdev_balanced_predictions.json
+
+
+GQADIR2="./playground/data/eval/gqa/data/eval"
+cd $GQADIR2
+python eval.py --tier testdev_balanced 

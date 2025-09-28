@@ -1,0 +1,9 @@
+/data/
+models/
+playground/data/eval
+mm_projector.bin
+__pycache__/
+build/
+dist/
+*.egg-info/
+
