@@ -28,7 +28,7 @@
   </p> -->
   <p>
     <sup>*</sup>This work was completed during Hanshi’s remote internship at AutoLab, SJTU.
-    <sup>†</sup>Corresponding author.
+    <!-- <sup>†</sup>Corresponding author. -->
   </p>
   <!-- <p>
     <a href="mailto:hanshi.wang.cv@outlook.com">hanshi.wang.cv@outlook.com</a>,
