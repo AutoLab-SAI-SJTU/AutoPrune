@@ -2,21 +2,21 @@
 <div align="center">
   <h1>AutoPrune [NeurIPS 2025]</h1>
   <h3>
-    <a href="" target="_blank" rel="noopener">
+    <a href="https://arxiv.org/abs/2509.23931" target="_blank" rel="noopener">
       ⚡️ AutoPrune: Each Complexity Deserves a Pruning Policy
     </a>
   </h3>
   <p>
     <p>
-  <a href="https://veritas12.github.io/" target="_blank" rel="noopener">Hanshi Wang</a><sup>1,2,3,5*</sup>,
-  <a href="https://openreview.net/profile?id=%7EYuhao_Xu5" target="_blank" rel="noopener">Yuhao Xu</a><sup>7</sup>,
-  <a href="http://www.aisensors.ac.cn/author/%E5%BE%90%E6%B3%BD%E5%9D%A4/" target="_blank" rel="noopener">Zekun Xu</a><sup>1,2</sup>,
-  <a href="https://nlpr.ia.ac.cn/users/gaojin/index.htm" target="_blank" rel="noopener">Jin Gao</a><sup>1,2,5†</sup>,
-  <a href="https://people.ucas.ac.cn/~huweiming" target="_blank" rel="noopener">Weiming Hu</a><sup>1,2,5,6</sup>,
-  <a href="https://zhipengzhang.cn/" target="_blank" rel="noopener">Zhipeng Zhang</a><sup>3,4†</sup>
+  <a href="https://veritas12.github.io/" target="_blank" rel="noopener">Hanshi Wang</a>,
+  <a href="https://openreview.net/profile?id=%7EYuhao_Xu5" target="_blank" rel="noopener">Yuhao Xu</a>,
+  <a href="http://www.aisensors.ac.cn/author/%E5%BE%90%E6%B3%BD%E5%9D%A4/" target="_blank" rel="noopener">Zekun Xu</a>,
+  <a href="https://nlpr.ia.ac.cn/users/gaojin/index.htm" target="_blank" rel="noopener">Jin Gao</a>,
+  <a href="https://people.ucas.ac.cn/~huweiming" target="_blank" rel="noopener">Weiming Hu</a>,
+  <a href="https://zhipengzhang.cn/" target="_blank" rel="noopener">Zhipeng Zhang</a>
 </p>
   </p>
-  <p>
+  <!-- <p>
     <sup>1</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), CASIA<br/>
     <sup>2</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences<br/>
     <sup>3</sup>School of Artificial Intelligence, Shanghai Jiao Tong University
@@ -25,19 +25,19 @@
     <sup>6</sup>School of Information Science and Technology, ShanghaiTech University,
     <sup>7</sup>Sichuan University<br/>
     
-  </p>
+  </p> -->
   <p>
-    <sup>*</sup>This work was completed during Hanshi’s remote internship at SJTU.
+    <sup>*</sup>This work was completed during Hanshi’s remote internship at AutoLab, SJTU.
     <sup>†</sup>Corresponding author.
   </p>
-  <p>
+  <!-- <p>
     <a href="mailto:hanshi.wang.cv@outlook.com">hanshi.wang.cv@outlook.com</a>,
     <a href="mailto:2022141460058@stu.scu.edu.cn">2022141460058@stu.scu.edu.cn</a>,
     <a href="mailto:xuzekun2025@ia.ac.cn">xuzekun2025@ia.ac.cn</a>,
     <a href="mailto:jin.gao@nlpr.ia.ac.cn">jin.gao@nlpr.ia.ac.cn</a>,
     <a href="mailto:wmhu@nlpr.ia.ac.cn">wmhu@nlpr.ia.ac.cn</a>,
     <a href="mailto:zhipeng.zhang.cv@outlook.com">zhipeng.zhang.cv@outlook.com</a>
-  </p>
+  </p> -->
 </div>
 
 
